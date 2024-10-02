@@ -16,12 +16,12 @@ public class Broken {
         }
     }
 
-        void method(int a, int b, int c, int d, int e, int f, int g) {
-        }
-
-        String name;
-
-        Broken() {
-        }
-
+    void method(int a, int b, int c, int d, int e, int f, int g) {
     }
+
+    String name;
+
+    Broken() {
+    }
+
+}
