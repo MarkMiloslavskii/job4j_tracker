@@ -8,7 +8,7 @@ public class Battery {
     }
 
     public String about() {
-        return "My charge: " + load + "%";
+        return " My charge: " + load + "%";
     }
 
     public void exchange(Battery another) {
