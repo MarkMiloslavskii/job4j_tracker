@@ -17,7 +17,7 @@ public class Item {
     }
 
     public void printInfo() {
-        System.out.print(id);
+        System.out.print(id + " ");
         System.out.println(name);
     }
 
