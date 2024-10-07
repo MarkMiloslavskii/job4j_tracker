@@ -23,14 +23,14 @@ public class Library {
         books[4] = cleancode;
 
         for (Book tale : books) {
-            System.out.println(tale.getName() + "," + tale.getPages());
+            System.out.println(tale.getName() + ", " + tale.getPages());
         }
 
         System.out.println("Books with name: Clean code");
         for (Book tale : books) {
-            if (tale == cleancode) {
-                System.out.println(tale.getName() + "," + tale.getPages());
+            if ("Clean code".equals(tale.getName())) {
+                    System.out.println(tale.getName() + ", " + tale.getPages());
+                }
             }
         }
     }
-}
