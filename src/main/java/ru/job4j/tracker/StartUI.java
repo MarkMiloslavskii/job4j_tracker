@@ -7,8 +7,6 @@ import ru.job4j.tracker.input.ValidateInput;
 import ru.job4j.tracker.output.ConsoleOutput;
 import ru.job4j.tracker.output.Output;
 
-import static java.lang.System.out;
-
 public class StartUI {
     private final Output output;
 
@@ -22,7 +20,7 @@ public class StartUI {
             showMenu(actions);
             int select = input.askInt("Выбрать: ");
             if (select < 0 || select >= actions.length) {
-                out.println("Неверный ввод, вы можете выбрать: от 0 до " + (actions.length - 1));
+                output.println("Неверный ввод, вы можете выбрать: 0 .. " + (actions.length - 1));
                 continue;
             }
             UserAction action = actions[select];
