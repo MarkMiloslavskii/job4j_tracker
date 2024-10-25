@@ -13,18 +13,18 @@ public class Tracker {
         return item;
     }
 
-    public Item[] findAll() {
-        return items.toArray(new  Item[0]);
+    public List<Item> findAll() {
+        return List.copyOf(items);
     }
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         List<Item> result = new ArrayList<>();
         for (Item item : items) {
             if (item.getName().equals(key)) {
                 result.add(item);
             }
         }
-        return result.toArray(new Item[0]);
+        return List.copyOf(result);
     }
 
     private int indexOf(int id) {
