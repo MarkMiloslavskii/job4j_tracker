@@ -19,12 +19,10 @@ public class AnalyzeByMap {
         List<Label> average = new ArrayList<>();
         for (Pupil person : pupils) {
             int totalScore = 0;
-            int subjectsCount = person.subjects().size();
-
             for (Subject subject : person.subjects()) {
                 totalScore += subject.score();
             }
-            double averageByPupil = (double) totalScore / subjectsCount;
+            double averageByPupil = (double) totalScore / person.subjects().size();
             average.add(new Label(person.name(), averageByPupil));
                 }
         return average;
@@ -36,8 +34,7 @@ public class AnalyzeByMap {
         for (Pupil person : pupils) {
             for (Subject subject : person.subjects()) {
                 String subjectName = subject.name();
-                int subjectScore = subject.score();
-                subjectScores.put(subjectName, subjectScores.getOrDefault(subjectName, 0) + subjectScore);
+                subjectScores.put(subjectName, subjectScores.getOrDefault(subjectName, 0) + subject.score());
                 subjectCounts.put(subjectName, subjectCounts.getOrDefault(subjectName, 0) + 1);
             }
         }
@@ -45,8 +42,7 @@ public class AnalyzeByMap {
         for (Map.Entry<String, Integer> entry : subjectScores.entrySet()) {
             String subjectName = entry.getKey();
             double totalScore = entry.getValue();
-            double count = subjectCounts.get(subjectName);
-            double averageScore = totalScore / count;
+            double averageScore = totalScore / subjectCounts.get(subjectName);
             averageBySubject.add(new Label(subjectName, averageScore));
         }
         return averageBySubject;
