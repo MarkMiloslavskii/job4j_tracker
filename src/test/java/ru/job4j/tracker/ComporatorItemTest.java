@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ComporatorItemTest {
     @Test
-            void SortItems() {
+            void sortItems() {
         List<Item> items = Arrays.asList(
                 new Item("one"),
                 new Item("two"),
@@ -28,7 +28,7 @@ public class ComporatorItemTest {
     }
 
     @Test
-    void SortDiscItems() {
+    void sortDiscItems() {
         List<Item> items = Arrays.asList(
                 new Item("one"),
                 new Item("two"),
