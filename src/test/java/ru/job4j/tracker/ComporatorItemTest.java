@@ -1,10 +1,9 @@
 package ru.job4j.tracker;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class ComporatorItemTest {
@@ -17,7 +16,7 @@ public class ComporatorItemTest {
                 new Item("four"),
                 new Item("five")
         );
-        Collections.sort(items, new ItemAscByName());
+        items.sort(new ItemAscByName());
         List<Item> expected = Arrays.asList(
                 new Item("five"),
                 new Item("four"),
@@ -25,7 +24,7 @@ public class ComporatorItemTest {
                 new Item("three"),
                 new Item("two")
         );
-    Assert.assertEquals(items, expected);
+    Assertions.assertEquals(items, expected);
     }
 
     @Test
@@ -37,7 +36,7 @@ public class ComporatorItemTest {
                 new Item("four"),
                 new Item("five")
         );
-        Collections.sort(items, new ItemDescByName());
+        items.sort(new ItemDescByName());
         List<Item> expected = Arrays.asList(
                 new Item("two"),
                 new Item("three"),
@@ -45,6 +44,6 @@ public class ComporatorItemTest {
                 new Item("four"),
                 new Item("five")
         );
-        Assert.assertEquals(items, expected);
+        Assertions.assertEquals(items, expected);
     }
 }
