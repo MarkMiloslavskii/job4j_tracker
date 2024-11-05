@@ -53,4 +53,14 @@ public class StringCompareTest {
         );
         assertThat(result).isLessThan(0);
     }
+
+    @Test
+    public void compareNumperAndLetter() {
+        StringCompare compare = new StringCompare();
+        int result = compare.compare(
+                "1",
+                "i"
+        );
+        assertThat(result).isLessThan(0);
+    }
 }
