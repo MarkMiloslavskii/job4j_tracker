@@ -19,28 +19,20 @@ public class FunctionalInterfaces {
         map.put(7, "seven");
         map.forEach((key, value) -> System.out.println(key + ": " + value));
 
-        BiPredicate<Integer, String> biPredicate = (key, value) -> key % 2 == 0 || map.get(key).length() == 4;
+        BiPredicate<Integer, String> biPredicate = (key, value) -> key % 2 == 0 || value.length() == 4;
         for (Integer key : map.keySet()) {
             String value = map.get(key);
             if (biPredicate.test(key, value)) {
                 System.out.println(key + " " + value);
             }
         }
-        /*
-            Заменить создание ArrayList из значений Map на Supplier, объявлен ниже, требуется его реализовать.
-         */
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
         List<String> strings = supplier.get();
 
         Consumer<String> consumer = value -> System.out.println(value);
         Function<String, String> function = value -> value.toUpperCase();
         for (String string : strings) {
-            /*
-                Заменить вывод строк на применение Consumer
-                Заменить преобразование строк к строкам в верхнем регистре с помощью Function
-                Необходимое объявлено выше, требуется их реализовать.
-            */
-            System.out.println(string.toUpperCase());
+            System.out.println(function.apply(string));
         }
     }
 }
