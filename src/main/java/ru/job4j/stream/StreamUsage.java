@@ -17,7 +17,7 @@ public class StreamUsage {
         List<Task> tasks = List.of(
                 new Task("Bug #1", 10),
                 new Task("Task #2", 20),
-                new Task("Bug #3", 40)
+                new Task("Bug #3", 50)
         );
         tasks.stream()
                 .filter(task -> task.name.contains("Bug"))
