@@ -74,13 +74,12 @@ public class BankService {
         User user = findByPassport(passport);
         if (user == null) {
             return null;
-        } else {
-            return users.get(user)
+        }
+        return users.get(user)
                     .stream()
                     .filter(account -> account.getRequisite().equals(requisite))
                     .findFirst()
                     .orElse(null);
-        }
     }
 
     /**
